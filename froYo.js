@@ -1,12 +1,18 @@
-const froYo = {
-    va: 12,
-    steak: 20,
-    soup: 8,
-    macAndCheese: 14,
-    soupAndSalad: 16
-};
+const userInput = prompt(
+    "Please enter a list of froyo flavors, separated by commas.",
+    "vanilla, vanilla, strawberry, coffee, coffee"
+);
 
+const froyoFlavs = userInput.split(",");
+const transfNumbers = {}; 
 
-console.log(Object.keys(dinner));
+for (let i = 0; i < froyoFlavs.length; i++) {
+    const flavor = froyoFlavs[i].trim(); 
+    if (transfNumbers[flavor]) {
+        transfNumbers[flavor]++;
+    } else {
+        transfNumbers[flavor] = 1;
+    }
+}
 
-console.log(Objects.values(dinner))
+console.log(transfNumbers);
